@@ -2,4 +2,7 @@ docs/*
 data/*
 models/*
 .vscode
-__pycache__/*
+__pycache__/
+!docs/Experimental_Procedure_cn.md
+runs/*
+reports/*

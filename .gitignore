@@ -1,0 +1,5 @@
+docs/*
+data/*
+models/*
+.vscode
+__pycache__/*

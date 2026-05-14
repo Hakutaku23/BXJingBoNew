@@ -1,0 +1,197 @@
+{
+  "package_name": "ca_safe_band_mvp",
+  "package_version": "1.0.1",
+  "artifact_version": "1.0.0",
+  "created_at": "2026-05-11T11:55:06",
+  "python_compatibility": "Python >= 3.8; package.py avoids PEP 604 union syntax.",
+  "required_features": [
+    "ca_per_rubber_flow_win_60_mean",
+    "bromine_feed_win_60_mean",
+    "esbo_feed_win_60_mean",
+    "neutral_alkali_feed_win_60_mean",
+    "r510a_temp_win_60_mean",
+    "r511a_temp_win_60_mean",
+    "r512a_temp_win_60_mean",
+    "r513_temp_win_60_mean",
+    "r514_temp_win_60_mean",
+    "tank_rubber_conc_win_60_mean"
+  ],
+  "optional_features": [
+    "output_ir_corrected_offset_20_win_15_std",
+    "recommended_ca_consumption_max",
+    "recommended_ca_consumption_min",
+    "recommended_ca_consumption_target",
+    "rubber_flow_2_win_60_mean"
+  ],
+  "output_schema": [
+    "recommendation_status",
+    "current_ca_consumption",
+    "recommended_ca_consumption_min",
+    "recommended_ca_consumption_max",
+    "recommended_ca_consumption_target",
+    "recommended_ca_feed_min",
+    "recommended_ca_feed_max",
+    "recommended_ca_feed_target",
+    "interval_position",
+    "action_hint",
+    "action_visibility",
+    "confidence_level",
+    "matched_rule_count",
+    "matched_rule_ids",
+    "selected_rule_ids",
+    "rule_evidence_ok_rate",
+    "rule_evidence_high_rate",
+    "rule_evidence_low_rate",
+    "rule_evidence_sample_count",
+    "engineering_review_required",
+    "explanation_cn",
+    "warning_flags",
+    "input_valid",
+    "missing_required_features",
+    "model_version",
+    "artifact_version",
+    "timestamp",
+    "current_ca_feed",
+    "t90_risk_level",
+    "t90_high_risk_warning",
+    "t90_low_risk_warning",
+    "prediction_type",
+    "recommendation_target",
+    "internal_normalized_metric",
+    "selected_rule_id",
+    "recommended_ca_feed_conversion_status",
+    "recommended_ca_feed_bounds_status",
+    "recommended_ca_feed_unbounded_min",
+    "recommended_ca_feed_unbounded_max",
+    "recommended_ca_feed_unbounded_target",
+    "ca_feed_point_lower_bound",
+    "ca_feed_point_upper_bound",
+    "estimated_quality_time",
+    "residence_time_minutes_used",
+    "automatic_control",
+    "dcs_setpoint_writeback",
+    "control_mode",
+    "error_code",
+    "error_message"
+  ],
+  "action_visibility_policy": {
+    "inside_band": {
+      "final_action_hint": "hold_in_band",
+      "action_visibility": "monitor_only",
+      "explanation_cn": "当前钙单耗处于推荐安全区间内，建议维持观察。"
+    },
+    "above_band": {
+      "final_action_hint": "above_band_manual_review",
+      "action_visibility": "manual_review_required",
+      "explanation_cn": "当前钙单耗高于推荐安全区间，历史数据中高 T90 风险偏高，建议人工复核是否需要小幅降钙。"
+    },
+    "below_band": {
+      "final_action_hint": "below_band_diagnostic_only",
+      "action_visibility": "diagnostic_only",
+      "explanation_cn": "当前钙单耗低于推荐安全区间，仅作诊断展示；当前 MVP 不给出加钙操作建议。"
+    },
+    "missing": {
+      "final_action_hint": "no_recommendation_missing_input",
+      "action_visibility": "no_recommendation",
+      "explanation_cn": "关键输入缺失，无法生成推荐区间。"
+    }
+  },
+  "safety_constraints": {
+    "monitor_only": true,
+    "automatic_control": false,
+    "dcs_writeback": false,
+    "increase_hint_hidden": true,
+    "engineering_review_required": true,
+    "no_guarantee_t90_qualified": true,
+    "shadow_trial_recommended": false
+  },
+  "dependency_policy": {
+    "package_py_standard_library_only_expected": true,
+    "third_party_dependencies_must_exist_in_IDB_requirements": true,
+    "no_serialized_model": true
+  },
+  "runtime_modes": {
+    "production": "Default. Ignores input matched_rule_ids and selected_rule_ids; matches rules from current feature values and q33/q66 boundaries.",
+    "replay": "For equivalence testing only. May use matched_rule_ids/selected_rule_ids from historical replay rows."
+  },
+  "runtime_input_modes": [
+    "engineered_feature_state",
+    "raw_platform_dataframe"
+  ],
+  "feature_window_definitions": {
+    "process_context_window_minutes": 60,
+    "ca_consumption_window_minutes": 60,
+    "ir_lag_offset_minutes": 20,
+    "ir_lag_window_minutes": 15,
+    "online_runtime_note": "Online runtime uses trailing windows ending at current time, not an additional 165min historical shift."
+  },
+  "raw_point_mapping": {
+    "rubber_flow_2": {
+      "friendly": "rubber_flow_2",
+      "tag": "B4-FIC-C51001.PV.F_CV",
+      "output": "rubber_flow_2_win_60_mean"
+    },
+    "bromine_feed": {
+      "friendly": "bromine_feed",
+      "tag": "B4-FIC-C51004.PV.CV",
+      "output": "bromine_feed_win_60_mean"
+    },
+    "tank_rubber_conc": {
+      "friendly": "tank_rubber_conc",
+      "tag": "B4-AT-C50002A-BIIR.PV.CV",
+      "output": "tank_rubber_conc_win_60_mean"
+    },
+    "r510a_temp": {
+      "friendly": "r510a_temp",
+      "tag": "B4-TI-C51007A_S.PV.CV",
+      "output": "r510a_temp_win_60_mean"
+    },
+    "r511a_temp": {
+      "friendly": "r511a_temp",
+      "tag": "B4-TI-C51101A_S.PV.CV",
+      "output": "r511a_temp_win_60_mean"
+    },
+    "r512a_temp": {
+      "friendly": "r512a_temp",
+      "tag": "B4-TI-C51702A.PV.F_CV",
+      "output": "r512a_temp_win_60_mean"
+    },
+    "ca_feed": {
+      "friendly": "ca_feed",
+      "tag": "B4-FIC-C51401.PV.F_CV",
+      "output": "ca_per_rubber_flow_win_60_mean"
+    },
+    "esbo_feed": {
+      "friendly": "esbo_feed",
+      "tag": "B4-FIC-C51801.PV.F_CV",
+      "output": "esbo_feed_win_60_mean"
+    },
+    "neutral_alkali_feed": {
+      "friendly": "neutral_alkali_feed",
+      "tag": "B4-FIC-C51605.PV.F_CV",
+      "output": "neutral_alkali_feed_win_60_mean"
+    },
+    "r513_temp": {
+      "friendly": "r513_temp",
+      "tag": "B4-TI-C51301_S.PV.CV",
+      "output": "r513_temp_win_60_mean"
+    },
+    "r514_temp": {
+      "friendly": "r514_temp",
+      "tag": "B4-TI-C51401_S.PV.CV",
+      "output": "r514_temp_win_60_mean"
+    }
+  },
+  "output_semantics": {
+    "recommendation_target_cn": "硬脂酸钙加注量推荐区间",
+    "internal_normalized_metric_cn": "钙单耗，仅作内部归一化计算和诊断",
+    "t90_output_cn": "T90 偏高/偏低风险提示，不是精确 T90 数值预测",
+    "feed_output_rule_cn": "最终对外输出的 recommended_ca_feed_min/max/target 必须先由内部钙单耗区间按 rubber_flow_2_win_60_mean 反归一化为硬脂酸钙加注量，再按点位表 B4-FIC-C51401.PV.F_CV 的 700~1300 上下限做安全保护。",
+    "feed_point_lower_bound": 700.0,
+    "feed_point_upper_bound": 1300.0,
+    "unbounded_feed_fields_cn": "recommended_ca_feed_unbounded_min/max/target 仅用于诊断原始反归一化值，不作为对外最终推荐值。",
+    "monitor_only": true,
+    "automatic_control": false,
+    "dcs_setpoint_writeback": false
+  }
+}

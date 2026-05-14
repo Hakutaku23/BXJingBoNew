@@ -1,0 +1,249 @@
+{
+  "created_at": "2026-05-08T10:56:13",
+  "features": {
+    "output_ir_corrected_offset_20_win_15_std": {
+      "feature_role": "diagnostic",
+      "required": false,
+      "source": "runtime_state",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": null,
+      "q66": null,
+      "unit": "",
+      "description": "Optional outlet IR-lag volatility diagnostic; not an action trigger."
+    },
+    "recommended_ca_consumption_max": {
+      "feature_role": "output_only",
+      "required": false,
+      "source": "runtime_output",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": null,
+      "q66": null,
+      "unit": "ratio",
+      "description": "Safe-band output field."
+    },
+    "recommended_ca_consumption_min": {
+      "feature_role": "output_only",
+      "required": false,
+      "source": "runtime_output",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": null,
+      "q66": null,
+      "unit": "ratio",
+      "description": "Safe-band output field."
+    },
+    "recommended_ca_consumption_target": {
+      "feature_role": "output_only",
+      "required": false,
+      "source": "runtime_output",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": null,
+      "q66": null,
+      "unit": "ratio",
+      "description": "Safe-band output field."
+    },
+    "ca_per_rubber_flow_win_60_mean": {
+      "feature_role": "primary_dose_feature",
+      "required": true,
+      "source": "runtime_state",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": null,
+      "q66": null,
+      "unit": "ratio",
+      "description": "Normalized calcium consumption used to classify current position."
+    },
+    "bromine_feed_win_60_mean": {
+      "feature_role": "regime_feature",
+      "required": true,
+      "source": "runtime_state",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": 385.04386444444447,
+      "q66": 401.5181166666667,
+      "unit": "",
+      "description": "Regime matching feature from train-like tertile boundaries."
+    },
+    "esbo_feed_win_60_mean": {
+      "feature_role": "regime_feature",
+      "required": true,
+      "source": "runtime_state",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": 128.04081722222222,
+      "q66": 132.8226811111111,
+      "unit": "",
+      "description": "Regime matching feature from train-like tertile boundaries."
+    },
+    "neutral_alkali_feed_win_60_mean": {
+      "feature_role": "regime_feature",
+      "required": true,
+      "source": "runtime_state",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": 5817.03864063492,
+      "q66": 6168.654341666666,
+      "unit": "",
+      "description": "Regime matching feature from train-like tertile boundaries."
+    },
+    "r510a_temp_win_60_mean": {
+      "feature_role": "regime_feature",
+      "required": true,
+      "source": "runtime_state",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": 40.23618277777778,
+      "q66": 40.541594999999994,
+      "unit": "",
+      "description": "Regime matching feature from train-like tertile boundaries."
+    },
+    "r511a_temp_win_60_mean": {
+      "feature_role": "regime_feature",
+      "required": true,
+      "source": "runtime_state",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": 20.32970611111111,
+      "q66": 20.47830499999999,
+      "unit": "",
+      "description": "Regime matching feature from train-like tertile boundaries."
+    },
+    "r512a_temp_win_60_mean": {
+      "feature_role": "regime_feature",
+      "required": true,
+      "source": "runtime_state",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": 44.16994833333334,
+      "q66": 45.80699444444445,
+      "unit": "",
+      "description": "Regime matching feature from train-like tertile boundaries."
+    },
+    "r513_temp_win_60_mean": {
+      "feature_role": "regime_feature",
+      "required": true,
+      "source": "runtime_state",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": 45.10707833333334,
+      "q66": 46.67913000000001,
+      "unit": "",
+      "description": "Regime matching feature from train-like tertile boundaries."
+    },
+    "r514_temp_win_60_mean": {
+      "feature_role": "regime_feature",
+      "required": true,
+      "source": "runtime_state",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": 45.27828944444445,
+      "q66": 47.49807222222223,
+      "unit": "",
+      "description": "Regime matching feature from train-like tertile boundaries."
+    },
+    "rubber_flow_2_win_60_mean": {
+      "feature_role": "feed_conversion_feature",
+      "required": false,
+      "source": "runtime_state",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": 47530.64323000001,
+      "q66": 49143.84766,
+      "unit": "",
+      "description": "Regime matching feature from train-like tertile boundaries."
+    },
+    "tank_rubber_conc_win_60_mean": {
+      "feature_role": "regime_feature",
+      "required": true,
+      "source": "runtime_state",
+      "lower_bound": null,
+      "upper_bound": null,
+      "median": null,
+      "q33": 16.971052777777775,
+      "q66": 18.462893333333334,
+      "unit": "",
+      "description": "Regime matching feature from train-like tertile boundaries."
+    }
+  },
+  "raw_point_mapping": {
+    "rubber_flow_2": {
+      "friendly": "rubber_flow_2",
+      "tag": "B4-FIC-C51001.PV.F_CV",
+      "output": "rubber_flow_2_win_60_mean"
+    },
+    "bromine_feed": {
+      "friendly": "bromine_feed",
+      "tag": "B4-FIC-C51004.PV.CV",
+      "output": "bromine_feed_win_60_mean"
+    },
+    "tank_rubber_conc": {
+      "friendly": "tank_rubber_conc",
+      "tag": "B4-AT-C50002A-BIIR.PV.CV",
+      "output": "tank_rubber_conc_win_60_mean"
+    },
+    "r510a_temp": {
+      "friendly": "r510a_temp",
+      "tag": "B4-TI-C51007A_S.PV.CV",
+      "output": "r510a_temp_win_60_mean"
+    },
+    "r511a_temp": {
+      "friendly": "r511a_temp",
+      "tag": "B4-TI-C51101A_S.PV.CV",
+      "output": "r511a_temp_win_60_mean"
+    },
+    "r512a_temp": {
+      "friendly": "r512a_temp",
+      "tag": "B4-TI-C51702A.PV.F_CV",
+      "output": "r512a_temp_win_60_mean"
+    },
+    "ca_feed": {
+      "friendly": "ca_feed",
+      "tag": "B4-FIC-C51401.PV.F_CV",
+      "output": "ca_per_rubber_flow_win_60_mean"
+    },
+    "esbo_feed": {
+      "friendly": "esbo_feed",
+      "tag": "B4-FIC-C51801.PV.F_CV",
+      "output": "esbo_feed_win_60_mean"
+    },
+    "neutral_alkali_feed": {
+      "friendly": "neutral_alkali_feed",
+      "tag": "B4-FIC-C51605.PV.F_CV",
+      "output": "neutral_alkali_feed_win_60_mean"
+    },
+    "r513_temp": {
+      "friendly": "r513_temp",
+      "tag": "B4-TI-C51301_S.PV.CV",
+      "output": "r513_temp_win_60_mean"
+    },
+    "r514_temp": {
+      "friendly": "r514_temp",
+      "tag": "B4-TI-C51401_S.PV.CV",
+      "output": "r514_temp_win_60_mean"
+    }
+  },
+  "feature_window_definitions": {
+    "process_context_window_minutes": 60,
+    "ca_consumption_window_minutes": 60,
+    "ir_lag_offset_minutes": 20,
+    "ir_lag_window_minutes": 15,
+    "online_runtime_note": "Online runtime uses trailing windows ending at current time, not an additional 165min historical shift."
+  }
+}

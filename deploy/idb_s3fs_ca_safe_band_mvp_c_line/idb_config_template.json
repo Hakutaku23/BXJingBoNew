@@ -1,0 +1,20 @@
+{
+  "asset_dir": "",
+  "artifact_path": "",
+  "support_path": "",
+  "schema_path": "",
+  "runtime_mode": "production",
+  "test_mode": "guidance_monitor_only",
+  "enable_optional_ir": false,
+  "min_valid_points": 30,
+  "process_window_minutes": 60,
+  "online_shift_minutes": 0,
+  "residence_minutes_for_backfill_validation": 174,
+  "safety_constraints": {
+    "monitor_only": true,
+    "advisory_output_only": true,
+    "automatic_control": false,
+    "closed_loop_control": false,
+    "dcs_setpoint_writeback": false
+  }
+}

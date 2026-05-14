@@ -1,0 +1,11 @@
+{
+  "package_name": "ca_safe_band_mvp_c_line",
+  "line": "C",
+  "mode": "guidance_monitor_only",
+  "created_at": "2026-05-13T19:19:42",
+  "artifact_source": "models\\ca_safe_band_mvp_c_line\\safe_band_artifact.json",
+  "algorithm_strategy": "top_rule_only",
+  "old_merged_line_superseded": true,
+  "future_data_used_for_algorithm_update": false,
+  "parquet_runtime_dependency": false
+}

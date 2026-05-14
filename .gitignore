@@ -6,3 +6,8 @@ __pycache__/
 !docs/Experimental_Procedure_cn.md
 runs/*
 reports/*
+IDB_req*
+*.zip
+*.parquet
+*.bak
+clean_cache.*
